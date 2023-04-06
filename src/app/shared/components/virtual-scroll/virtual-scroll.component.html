@@ -1,0 +1,28 @@
+<div class="w-full h-full justify-center items-center flex">
+  <ng-container *ngIf="dataProps?.catsQuotes$ | async as catsQuotes">
+    <cdk-virtual-scroll-viewport
+      (scrolledIndexChange)="fetchMoreData($event)"
+      *ngIf="catsQuotes.length"
+      [itemSize]="60"
+      [maxBufferPx]="300"
+      [minBufferPx]="150"
+      appendOnly
+    >
+      <div *cdkVirtualFor="let quote of catsQuotes; trackBy: trackByIndex"
+           class="shadow-sm overflow-wrap border-solid border-2 border-sky-50 p-6 bg-white rounded-2xl">
+        <article>
+          <p class="text-sm">
+            {{ quote.text }}
+          </p>
+        </article>
+      </div>
+    </cdk-virtual-scroll-viewport>
+    <ng-container *ngIf="!catsQuotes.length">
+      <article class="italic flex flex-col text-justify gap-4 p-4">
+        <span>{{ noDataTexts.cats.header }}</span>
+        <span>{{ noDataTexts.cats.body }}</span>
+        <span>{{ noDataTexts.cats.footer }}</span>
+      </article>
+    </ng-container>
+  </ng-container>
+</div>

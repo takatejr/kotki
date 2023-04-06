@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url(./app/shared/styles/variables.scss);
+@import url(./app/shared/styles/normalize.scss);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --accent-tone-60: rgba(100, 77, 237, 0.6);
+    --accent-tone-100: rgba(100, 77, 237, 1);
+    --primaryButtonBg: rgba(100, 77, 237, 0.08);
+    --dark-tone-8: #eeeef2;
+    --scroll-bar: #e5e2e7;
+    --light-theme: #f9f9fc;
+}
+
+img {
+    content-visibility: auto;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+select:-webkit-autofill,
+select:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+html,
+body {
+    height: calc(100vh - calc(100vh - 100%));
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    --scrollbarBG: var(--scroll-bar);
+    --thumbBG: var(--scroll-bar);
+    --box-shadow: 0px 4px 24px -6px rgba(6, 34, 74, 0.3);
+}
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-bar) var(--scroll-bar);
+}
+
+::-webkit-scrollbar {
+    width: 5px !important;
+    scroll-behavior: smooth !important;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 5px !important;
+    box-shadow: inset 0 0 5px transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px !important;
+    width: 5px;
+    background-color: var(--scroll-bar);
+}
