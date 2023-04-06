@@ -1,7 +1,7 @@
-<section class="w-full h-full p-10 flex flex-col justify-center items-center ">
-  <form [formGroup]="loginForm" class="flex flex-col p-10 border-solid border-black border-2 rounded-2xl gap-4">
-    <app-input type="text" title="Login" [formField]="loginForm?.get('login')"></app-input>
-    <app-input type="password" title="Hasło" [formField]="loginForm?.get('password')"></app-input>
-    <button mat-raised-button (click)="login($event)">Loguj</button>
-  </form>
+<section class="w-full h-full p-10 flex flex-col justify-center items-center">
+    <form [formGroup]="loginForm" class="flex flex-col p-10 border-solid border-black border-2 rounded-2xl gap-4">
+        <app-input type="text" title="Login" [formField]="loginForm?.get('login')"></app-input>
+        <app-input type="password" title="Hasło" [formField]="loginForm?.get('password')"></app-input>
+        <button mat-raised-button (click)="login($event)">Loguj</button>
+    </form>
 </section>
